@@ -5,6 +5,7 @@ dev
 .babelrc
 .eslintrc
 .gitignore
+.linstagedrc
 .prettierrc
 .stylelintrc
 webpack.config.js

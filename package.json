@@ -1,24 +1,24 @@
 {
-  "name": "react-package-template",
-  "version": "1.0.0",
-  "description": "Template for building react packages",
-  "main": "index.js",
+  "name": "react-app-elements",
+  "version": "0.0.1",
+  "description": "Basic elements to use within React",
+  "main": "dist/index.js",
   "scripts": {
     "dist-compile-less": "lessc src/stylesheets/main.less dist/css/main.css",
     "start": "webpack-dev-server",
-    "prepublishOnly": "npm run transpile-js; npm run dist-compile-less",
+    "prepublishOnly": "concurrently \"npm run transpile-js\" \"npm run dist-compile-less\"",
     "transpile-js": "babel src --out-dir dist --ignore src/stylesheets"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ppak10/react-package-template.git"
+    "url": "git+https://github.com/ppak10/react-app-elements.git"
   },
   "author": "ppak10",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ppak10/react-package-template/issues"
+    "url": "https://github.com/ppak10/react-app-elements/issues"
   },
-  "homepage": "https://github.com/ppak10/react-package-template#readme",
+  "homepage": "https://github.com/ppak10/react-app-elements#readme",
   "dependencies": {
     "react": "^16.9.0"
   },
@@ -30,6 +30,7 @@
     "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
+    "concurrently": "^4.1.2",
     "css-loader": "^3.2.0",
     "eslint": "^6.1.0",
     "eslint-config-google": "^0.13.0",

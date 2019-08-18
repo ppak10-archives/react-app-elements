@@ -4,10 +4,7 @@
  */
 
 // Components
-export {BaseMap} from './components/BaseMap';
-export {DynamicMap} from './components/DynamicMap';
-export {PlacesSearch} from './components/PlacesSearch';
-export {StaticMap} from './components/StaticMap';
+export {Navigation} from './components/Navigation';
 
 // Styles
 import './css/main.css';

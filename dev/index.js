@@ -7,10 +7,6 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-// Styles
-import './main.css';
-import '../src/stylesheets/main.less';
-
 // Components
 import App from './components/App';
 
