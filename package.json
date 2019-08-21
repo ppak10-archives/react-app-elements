@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "dist-compile-less": "lessc src/stylesheets/main.less dist/css/main.css",
-    "start": "webpack-dev-server",
     "prepublishOnly": "concurrently \"npm run transpile-js\" \"npm run dist-compile-less\"",
+    "start": "webpack-dev-server",
+    "test": "npx mocha",
     "transpile-js": "babel src --out-dir dist --ignore src/stylesheets"
   },
   "repository": {
@@ -30,6 +31,7 @@
     "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
     "concurrently": "^4.1.2",
     "css-loader": "^3.2.0",
     "eslint": "^6.1.0",
@@ -42,6 +44,7 @@
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "lint-staged": "^9.2.3",
+    "mocha": "^6.2.0",
     "postcss-loader": "^3.0.0",
     "precss": "^4.0.0",
     "prettier": "^1.18.2",

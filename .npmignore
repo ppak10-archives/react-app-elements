@@ -1,5 +1,7 @@
-src
+.circleci
 dev
+src
+test
 
 # Dot Files
 .babelrc
