@@ -62,5 +62,10 @@ typings/
 
 .DS_Store
 *.swp
-dist
-src/css
+
+# Publish Output
+index.js
+main.css
+Navigation.js
+proptypes.js
+

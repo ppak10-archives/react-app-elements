@@ -4,7 +4,7 @@
  */
 
 // Components
-export {Navigation} from '../src/components/Navigation';
+export {Navigation} from '../src/Navigation';
 
 // Styles
 import '../src/stylesheets/main.less';

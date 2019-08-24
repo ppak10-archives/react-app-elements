@@ -4,7 +4,7 @@
  */
 
 // Components
-export {Navigation} from './components/Navigation';
+export {Navigation} from './Navigation';
 
 // Styles
-import './css/main.css';
+import './main.css';

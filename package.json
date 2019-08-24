@@ -2,13 +2,13 @@
   "name": "react-app-elements",
   "version": "0.0.2",
   "description": "Basic elements to use within React",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
-    "dist-compile-less": "lessc src/stylesheets/main.less dist/css/main.css",
-    "prepublishOnly": "concurrently \"npm run transpile-js\" \"npm run dist-compile-less\"",
+    "compile-less": "lessc src/stylesheets/main.less main.css",
+    "prepublishOnly": "concurrently \"npm run transpile-js\" \"npm run compile-less\"",
     "start": "webpack-dev-server",
     "test": "npx mocha",
-    "transpile-js": "babel src --out-dir dist --ignore src/stylesheets"
+    "transpile-js": "babel src --out-dir . --ignore src/stylesheets"
   },
   "repository": {
     "type": "git",

@@ -7,7 +7,7 @@
 import React from 'react';
 
 // Constants
-import {STRING, CHILDREN} from '../constants/proptypes';
+import {STRING, CHILDREN} from './proptypes';
 
 export const Navigation = ({children, logo}) => {
   // Html
