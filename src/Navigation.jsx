@@ -9,7 +9,7 @@ import React from 'react';
 // Constants
 import {STRING, CHILDREN} from './proptypes';
 
-export const Navigation = ({children, logo}) => {
+const Navigation = ({children, logo}) => {
   // Html
   const listHtml = children
     ? children.map((child, index) => <li key={index}>{child}</li>)
@@ -29,3 +29,5 @@ Navigation.propTypes = {
   children: CHILDREN,
   logo: STRING.isRequired,
 };
+
+export default Navigation;

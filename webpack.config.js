@@ -4,12 +4,12 @@
  */
 
 // Node Modules
-const PATH = require('path');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Plugins
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
-  template: PATH.join(__dirname, 'dev/index.html'),
+  template: path.join(__dirname, 'dev/index.html'),
   filename: './index.html',
 });
 
@@ -21,7 +21,7 @@ module.exports = {
     port: PORT,
     historyApiFallback: true,
   },
-  entry: [PATH.join(__dirname, 'dev')],
+  entry: [path.join(__dirname, 'dev')],
   mode: 'development',
   module: {
     rules: [
@@ -67,6 +67,9 @@ module.exports = {
   },
   plugins: [htmlWebpackPlugin],
   resolve: {
+    alias: {
+      'react-app-elements': path.resolve(__dirname, 'src'),
+    },
     extensions: ['.js', '.jsx'],
   },
 };

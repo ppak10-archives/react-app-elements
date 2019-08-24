@@ -8,7 +8,7 @@ import React from 'react';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 
 // Components
-import {Navigation} from '../package';
+import Navigation from 'react-app-elements/Navigation';
 
 export default function App() {
   return (
