@@ -69,3 +69,4 @@ main.css
 Navigation.js
 proptypes.js
 !src/*
+!dev/*
