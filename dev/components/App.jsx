@@ -5,21 +5,29 @@
 
 // Node Modules
 import React from 'react';
-import {BrowserRouter as Router, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
 
 // Components
 import Navigation from 'react-app-elements/Navigation';
+
+// Pages
+import {ButtonsPage} from './pages/Button';
 
 export default function App() {
   return (
     <Router>
       <Navigation logo="react-app-elements">
-        <Link to="/1">Link 1</Link>
+        <Link to="/buttons">Buttons</Link>
         <Link to="/2">Link 2</Link>
         <Link to="/3">Link 3</Link>
         <Link to="/4">Link 4</Link>
       </Navigation>
-      <div className="page">Hello world</div>
+      <Switch>
+        <Route exact path="/">
+          Hello World
+        </Route>
+        <Route path="/buttons" component={ButtonsPage} />
+      </Switch>
     </Router>
   );
 }

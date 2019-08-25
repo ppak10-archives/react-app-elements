@@ -4,5 +4,6 @@
  */
 
 module.exports = {
+  Button: require('./Button'),
   Navigation: require('./Navigation'),
 };
