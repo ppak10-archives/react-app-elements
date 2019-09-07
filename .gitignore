@@ -64,9 +64,8 @@ typings/
 *.swp
 
 # Publish Output
-index.js
-main.css
-Navigation.js
-proptypes.js
-!src/*
-!dev/*
+/index.js
+/main.css
+/Navigation.js
+/proptypes.js
+/Fields
