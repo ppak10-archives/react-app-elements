@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
 
 // Components
 import Navigation from 'react-app-elements/Navigation';
+import {Page} from 'react-app-elements/Templates';
 
 // Pages
 import {ButtonsPage} from './pages/Buttons';
@@ -23,13 +24,15 @@ export default function App() {
         <Link to="/3">Link 3</Link>
         <Link to="/4">Link 4</Link>
       </Navigation>
-      <Switch>
-        <Route exact path="/">
-          Hello World
-        </Route>
-        <Route path="/buttons" component={ButtonsPage} />
-        <Route path="/fields" component={FieldsPage} />
-      </Switch>
+      <Page>
+        <Switch>
+          <Route exact path="/">
+            Hello World
+          </Route>
+          <Route path="/buttons" component={ButtonsPage} />
+          <Route path="/fields" component={FieldsPage} />
+        </Switch>
+      </Page>
     </Router>
   );
 }

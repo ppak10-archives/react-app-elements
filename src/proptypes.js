@@ -1,6 +1,6 @@
 /**
  * proptypes.js
- * Proptypes for react components
+ * Prop types for react components
  */
 
 // Node Modules
@@ -13,4 +13,7 @@ export const NUMBER = PropTypes.number;
 export const STRING = PropTypes.string;
 
 // React
-export const CHILDREN = PropTypes.arrayOf(COMPONENT);
+export const CHILDREN = PropTypes.oneOfType([
+  PropTypes.arrayOf(COMPONENT),
+  COMPONENT,
+]);

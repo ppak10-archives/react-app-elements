@@ -6,6 +6,15 @@
 // Node Modules
 import React from 'react';
 
-export default function Username() {
-  return <div>Username Component</div>;
+// Constants
+import {STRING} from '../proptypes';
+
+export default function Username(props) {
+  return (
+    <input className={`rae-username-field ${props.className || ''}`}></input>
+  );
 }
+
+Username.propTypes = {
+  className: STRING,
+};
