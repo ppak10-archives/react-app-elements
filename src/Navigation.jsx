@@ -11,16 +11,17 @@ import {STRING, CHILDREN} from './proptypes';
 
 const Navigation = ({children, logo}) => {
   // Html
-  const listHtml = children
-    ? children.map((child, index) => <li key={index}>{child}</li>)
-    : '';
+  const rightListHtml = children ?
+    children.map((child, index) => <li key={index}>{child}</li>) :
+    '';
 
   return (
     <div className="navigation">
       <div className="logo">
         <span>{logo}</span>
       </div>
-      <ul>{listHtml}</ul>
+      {/* <ul>{leftListHtml}</ul> */}
+      <ul>{rightListHtml}</ul>
     </div>
   );
 };

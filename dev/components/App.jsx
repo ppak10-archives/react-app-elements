@@ -14,6 +14,7 @@ import {Page} from 'react-app-elements/Templates';
 // Pages
 import {ButtonsPage} from './pages/Buttons';
 import {FieldsPage} from './pages/Fields';
+import Modals from './pages/Modals';
 
 export default function App() {
   return (
@@ -21,7 +22,7 @@ export default function App() {
       <Navigation logo="react-app-elements">
         <Link to="/buttons">Buttons</Link>
         <Link to="/fields">Fields</Link>
-        <Link to="/3">Link 3</Link>
+        <Link to="/modals">Modals</Link>
         <Link to="/4">Link 4</Link>
       </Navigation>
       <Page>
@@ -31,6 +32,7 @@ export default function App() {
           </Route>
           <Route path="/buttons" component={ButtonsPage} />
           <Route path="/fields" component={FieldsPage} />
+          <Route path="/modals" component={Modals} />
         </Switch>
       </Page>
     </Router>

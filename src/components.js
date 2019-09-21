@@ -6,5 +6,6 @@
 module.exports = {
   Button: require('./Button'),
   Fields: require('./Fields'),
+  Modal: require('./Modal'),
   Navigation: require('./Navigation'),
 };
