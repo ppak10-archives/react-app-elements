@@ -3,19 +3,31 @@
  * Styles for navigation bar
  */
 
-.navigation {
+.nav-item {
+  align-self: center;
   display: flex;
+  padding: 1em;
+}
+
+.navigation {
   background: linear-gradient(to bottom right, #fabb98, #d48dd1);
+  display: flex;
+  padding: 1em;
 
   .logo {
-    display: flex;
-    flex: 1;
-    margin: auto;
+    &:extend(.nav-item);
+  }
 
-    span {
-      padding: 1em;
-      text-align: center;
-    }
+  .left:extend(.nav-item) {
+    flex: 1;
+  }
+  .center:extend(.nav-item) {
+    flex: 1;
+    justify-content: center;
+  }
+  .right:extend(.nav-item) {
+    flex: 1;
+    flex-direction: row-reverse;
   }
 
   ul {

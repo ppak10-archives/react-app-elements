@@ -14,7 +14,7 @@ import {CHILDREN, STRING} from './proptypes';
 
 export default function Modal({children, className}) {
   // State
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   // Callbacks
   const onHide = () => {

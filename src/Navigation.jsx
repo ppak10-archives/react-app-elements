@@ -9,26 +9,33 @@ import React from 'react';
 // Constants
 import {STRING, CHILDREN} from './proptypes';
 
-const Navigation = ({children, logo}) => {
-  // Html
-  const rightListHtml = children ?
-    children.map((child, index) => <li key={index}>{child}</li>) :
-    '';
-
-  return (
-    <div className="navigation">
-      <div className="logo">
-        <span>{logo}</span>
-      </div>
-      {/* <ul>{leftListHtml}</ul> */}
-      <ul>{rightListHtml}</ul>
-    </div>
-  );
+const Bar = ({children}) => {
+  return <div className="navigation">{children}</div>;
 };
 
-Navigation.propTypes = {
+Bar.propTypes = {
   children: CHILDREN,
-  logo: STRING.isRequired,
 };
 
-export default Navigation;
+const Logo = ({children}) => <div className="logo">{children}</div>;
+
+Logo.propTypes = {
+  children: CHILDREN,
+};
+
+const List = ({align, children}) => <div className={align}>{children}</div>;
+
+List.propTypes = {
+  align: STRING,
+  children: CHILDREN,
+};
+
+List.defaultProps = {
+  align: 'center',
+};
+
+export default {
+  Bar,
+  List,
+  Logo,
+};

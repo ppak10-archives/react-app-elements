@@ -5,10 +5,10 @@
 
 // Node Modules
 import React from 'react';
-import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // Components
-import Navigation from 'react-app-elements/Navigation';
+import NavigationBar from './Navigation';
 import {Page} from 'react-app-elements/Templates';
 
 // Pages
@@ -19,12 +19,7 @@ import Modals from './pages/Modals';
 export default function App() {
   return (
     <Router>
-      <Navigation logo="react-app-elements">
-        <Link to="/buttons">Buttons</Link>
-        <Link to="/fields">Fields</Link>
-        <Link to="/modals">Modals</Link>
-        <Link to="/4">Link 4</Link>
-      </Navigation>
+      <NavigationBar />
       <Page>
         <Switch>
           <Route exact path="/">
