@@ -9,11 +9,10 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // Components
 import NavigationBar from './Navigation';
-import {Page} from 'react-app-elements/Templates';
+import {Page} from 'react-app-elements/Template';
 
 // Pages
 import {ButtonsPage} from './pages/Buttons';
-import {FieldsPage} from './pages/Fields';
 import Modals from './pages/Modals';
 
 export default function App() {
@@ -26,7 +25,6 @@ export default function App() {
             Hello World
           </Route>
           <Route path="/buttons" component={ButtonsPage} />
-          <Route path="/fields" component={FieldsPage} />
           <Route path="/modals" component={Modals} />
         </Switch>
       </Page>
