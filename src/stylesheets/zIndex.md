@@ -1,5 +1,5 @@
 # Z-Index
-Tracks z index uses
+Tracks z index uses for components
 
 # Modal
 * Hidden - `z-index: -1`

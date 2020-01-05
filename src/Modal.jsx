@@ -7,10 +7,10 @@
 import React, {useState} from 'react';
 
 // Utils
-import {classnamesLite} from './utils';
+import {classnamesLite} from './js/utils';
 
 // Constants
-import {CHILDREN, STRING} from './proptypes';
+import {CHILDREN, STRING} from './js/proptypes';
 
 export default function Modal({children, className}) {
   // State
@@ -36,14 +36,20 @@ export default function Modal({children, className}) {
       <button onClick={onShow}>Open</button>
       <div className={modalClassName} onClick={onHide}>
         <div className="modal" onClick={(e) => e.stopPropagation()}>
-          Hello World
+          {children}
         </div>
       </div>
     </>
   );
 }
 
+Modal.defaultProps = {
+  children: <div>Render Modal Children Here</div>,
+};
+
 Modal.propTypes = {
   children: CHILDREN,
   className: STRING,
 };
+
+// export const Header = ({children, className}) => <div></div>;

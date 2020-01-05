@@ -10,5 +10,5 @@ import React from 'react';
 import Modal from 'react-app-elements/Modal';
 
 export default function Modals() {
-  return <Modal />;
+  return <Modal></Modal>;
 }

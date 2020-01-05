@@ -1,15 +1,15 @@
 /**
- * Page.jsx
- * Template component to display page
+ * Template.jsx
+ * Template components
  */
 
 // Node Modules
 import React from 'react';
 
 // Constants
-import {STRING, CHILDREN} from '../proptypes';
+import {STRING, CHILDREN} from './js/proptypes';
 
-export default function Page(props) {
+export function Page(props) {
   return (
     <div className={`rae-page-template ${props.className}`}>
       {props.children}
