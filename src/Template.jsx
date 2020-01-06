@@ -10,11 +10,7 @@ import React from 'react';
 import {STRING, CHILDREN} from './js/proptypes';
 
 export function Page(props) {
-  return (
-    <div className={`rae-page-template ${props.className}`}>
-      {props.children}
-    </div>
-  );
+  return <div className={`page ${props.className}`}>{props.children}</div>;
 }
 
 Page.propTypes = {

@@ -12,6 +12,7 @@ import Navigation from 'react-app-elements/Navigation';
 
 const Left = () => (
   <>
+    <Link to="/examples">Examples</Link>
     <Link to="/buttons">Buttons</Link>
     <Link to="/fields">Fields</Link>
     <Link to="/modals">Modals</Link>
