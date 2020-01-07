@@ -1,5 +1,7 @@
 .circleci
-dev
+app
+public
+server
 src
 test
 

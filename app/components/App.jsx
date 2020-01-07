@@ -5,6 +5,7 @@
 
 // Node Modules
 import React from 'react';
+import {hot} from 'react-hot-loader/root';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // Components
@@ -16,21 +17,21 @@ import PortfolioPage from './examples/Portfolio';
 import {ButtonsPage} from './pages/Buttons';
 import Modals from './pages/Modals';
 
-export default function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route exact path="/examples">
-          <PortfolioPage />
-        </Route>
-        <Route path="/">
-          <NavigationBar />
-          <Page>
-            <Route path="/buttons" component={ButtonsPage} />
-            <Route path="/modals" component={Modals} />
-          </Page>
-        </Route>
-      </Switch>
-    </Router>
-  );
-}
+const App = () => (
+  <Router>
+    <Switch>
+      <Route exact path="/examples">
+        <PortfolioPage />
+      </Route>
+      <Route path="/">
+        <NavigationBar />
+        <Page>
+          <Route path="/buttons" component={ButtonsPage} />
+          <Route path="/modals" component={Modals} />
+        </Page>
+      </Route>
+    </Switch>
+  </Router>
+);
+
+export default hot(App);

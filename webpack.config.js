@@ -1,27 +1,20 @@
 /**
  * webpack.config.js
- * Webpack configuration for development environment
+ * Webpack configuration for package development environment
  */
 
 // Node Modules
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-// Plugins
-const htmlWebpackPlugin = new HtmlWebpackPlugin({
-  template: path.join(__dirname, 'dev/index.html'),
-  filename: './index.html',
-});
-
-// Constants
-const PORT = 3000;
+import path from 'path';
+import {HotModuleReplacementPlugin} from 'webpack';
 
 module.exports = {
-  devServer: {
-    port: PORT,
-    historyApiFallback: true,
+  entry: {
+    index: [
+      'react-hot-loader/patch',
+      'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+      './app/index.js',
+    ],
   },
-  entry: [path.join(__dirname, 'dev')],
   mode: 'development',
   module: {
     rules: [
@@ -65,10 +58,17 @@ module.exports = {
       },
     ],
   },
-  plugins: [htmlWebpackPlugin],
+  output: {
+    path: path.resolve(__dirname, './public'),
+    filename: '[name].bundle.js',
+    publicPath: '/',
+  },
+  plugins: [new HotModuleReplacementPlugin()],
   resolve: {
+    // https://github.com/gaearon/react-hot-loader#hot-loaderreact-dom
+    // Reinstall react-dom when replacing this package
     alias: {
-      'react-app-elements': path.resolve(__dirname, 'src'),
+      'react-dom': '@hot-loader/react-dom',
     },
     extensions: ['.js', '.jsx'],
   },

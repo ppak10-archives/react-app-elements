@@ -64,8 +64,4 @@ typings/
 *.swp
 
 # Publish Output
-/index.js
-/main.css
-/Navigation.js
-/proptypes.js
-/Fields
+dist
