@@ -1,0 +1,38 @@
+/**
+ * portfolio.less
+ * Styles for example portfolio page
+ */
+
+.portfolio-page {
+  -ms-overflow-style: none;
+  -ms-scroll-snap-type: mandatory;
+  align-items: center;
+  background-image: linear-gradient(#e1dee9, rgb(27, 216, 230));
+  scroll-snap-type: y mandatory;
+
+  .slide {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    justify-content: center;
+    scroll-snap-align: start;
+    text-align: center;
+    width: 100vw;
+
+    .card {
+      align-items: center;
+      background-color: blue;
+      border-radius: 1em;
+      box-shadow: 0.5em 0.5em 2em #000;
+      display: flex;
+      height: 90%;
+      justify-content: center;
+      width: 90%;
+    }
+  }
+}
+
+.portfolio-page::-webkit-scrollbar {
+  display: none;
+}

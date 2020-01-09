@@ -5,6 +5,7 @@
     ["module-resolver", {
       "root": ["./"],
       "alias": {
+        "app": "./app",
         "config": "./config.json",
         "react-app-elements": "./src"
       }
