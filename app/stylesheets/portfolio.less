@@ -7,8 +7,12 @@
   -ms-overflow-style: none;
   -ms-scroll-snap-type: mandatory;
   align-items: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
   background-image: linear-gradient(#e1dee9, rgb(27, 216, 230));
   scroll-snap-type: y mandatory;
+  scrollbar-width: none;
 
   .slide {
     align-items: center;
@@ -26,13 +30,27 @@
       border-radius: 1em;
       box-shadow: 0.5em 0.5em 2em #000;
       display: flex;
-      height: 90%;
+      height: 80%;
       justify-content: center;
-      width: 90%;
+      width: 80%;
     }
+  }
+
+  .tile-layout {
+    flex-direction: column;
+  }
+
+  .footer {
+    transform: translateZ(-100px) scale(2);
   }
 }
 
 .portfolio-page::-webkit-scrollbar {
   display: none;
+}
+
+.tile {
+  background-color: red;
+  margin: 1em;
+  padding: 5em;
 }

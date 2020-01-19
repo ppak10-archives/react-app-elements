@@ -26,8 +26,15 @@ const App = () => (
       <Route path="/">
         <NavigationBar />
         <Page>
-          <Route path="/buttons" component={ButtonsPage} />
-          <Route path="/modals" component={Modals} />
+          <Route exact path="/">
+            <div>Hello World</div>
+          </Route>
+          <Route path="/buttons">
+            <ButtonsPage />
+          </Route>
+          <Route path="/modals">
+            <Modals />
+          </Route>
         </Page>
       </Route>
     </Switch>
