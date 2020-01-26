@@ -9,35 +9,113 @@
   padding: 1em;
 }
 
-.navigation {
-  background: linear-gradient(to bottom right, #fabb98, #d48dd1);
-  display: flex;
-  padding: 1em;
-
-  .logo {
-    &:extend(.nav-item);
-  }
-
-  .left:extend(.nav-item) {
-    flex: 1;
-  }
-  .center:extend(.nav-item) {
-    flex: 1;
+.navigation-bar {
+  a {
+    align-items: center;
+    color: white;
+    background: blue;
+    display: flex;
+    font-weight: bold;
+    height: 2em;
     justify-content: center;
-  }
-  .right:extend(.nav-item) {
-    flex: 1;
-    flex-direction: row-reverse;
+    text-decoration: none;
+    transition: background 0.25s;
+
+    &:hover {
+      background: red;
+    }
   }
 
   ul {
     display: flex;
-    list-style-type: none;
-    margin: 1em;
+    list-style: none;
+    margin: 0;
     padding: 0;
+  }
 
-    li {
-      margin: 0 1em;
+  li {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 0;
+
+    .submenu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
+
+      li {
+        display: none;
+      }
+    }
+
+    .nested-submenu {
+      display: flex;
+      flex-direction: column;
+      left: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    &:hover {
+      .submenu {
+        li {
+          display: block;
+
+          .nested-submenu {
+            li {
+              display: none;
+            }
+          }
+
+          &:hover {
+            .nested-submenu {
+              li {
+                display: block;
+              }
+            }
+          }
+        }
+      }
     }
   }
+
+  .arrow {
+    margin-left: 0.25em;
+  }
 }
+
+// .navigation {
+//   background: linear-gradient(to bottom right, #fabb98, #d48dd1);
+//   display: flex;
+//   padding: 1em;
+
+//   .logo {
+//     &:extend(.nav-item);
+//   }
+
+//   .left:extend(.nav-item) {
+//     flex: 1;
+//   }
+//   .center:extend(.nav-item) {
+//     flex: 1;
+//     justify-content: center;
+//   }
+//   .right:extend(.nav-item) {
+//     flex: 1;
+//     flex-direction: row-reverse;
+//   }
+
+//   ul {
+//     display: flex;
+//     list-style-type: none;
+//     margin: 1em;
+//     padding: 0;
+
+//     li {
+//       margin: 0 1em;
+//     }
+//   }
+// }

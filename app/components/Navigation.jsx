@@ -12,20 +12,73 @@ import Navigation from 'react-app-elements/Navigation';
 
 const Left = () => (
   <>
-    <Link to="/examples">Examples</Link>
-    <Link to="/buttons">Buttons</Link>
-    <Link to="/fields">Fields</Link>
-    <Link to="/modals">Modals</Link>
-    <Link to="/4">Link 4</Link>
+    <li>
+      <Link to="/examples">
+        Examples
+        <span className="arrow">&#x25BC;</span>
+      </Link>
+      <ul className="submenu">
+        <li>
+          <Link to="/examples">Example 1</Link>
+        </li>
+        <li>
+          <Link to="/examples">Example 2</Link>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <Link to="/buttons">Buttons</Link>
+    </li>
+    <li>
+      <Link to="/fields">
+        Fields
+        <span className="arrow">&#x25BC;</span>
+      </Link>
+      <ul className="submenu">
+        <li>
+          <Link to="/examples">Example 1</Link>
+        </li>
+        <li>
+          <Link to="/examples">Example 2</Link>
+        </li>
+        <li>
+          <Link to="/examples">
+            Example 3<span className="arrow">&#x25B6;</span>
+          </Link>
+          <ul className="nested-submenu">
+            <li>
+              <Link to="/examples">Nested Example 1</Link>
+            </li>
+            <li>
+              <Link to="/examples">Nested Example 2</Link>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <Link to="/modals">Modals</Link>
+    </li>
+    <li>
+      <Link to="/4">Link 4</Link>
+    </li>
   </>
 );
 
 const Right = () => (
   <>
-    <Link to="/buttons">Buttons</Link>
-    <Link to="/fields">Fields</Link>
-    <Link to="/modals">Modals</Link>
-    <Link to="/4">Link 4</Link>
+    <li>
+      <Link to="/buttons">Buttons</Link>
+    </li>
+    <li>
+      <Link to="/fields">Fields</Link>
+    </li>
+    <li>
+      <Link to="/modals">Modals</Link>
+    </li>
+    <li>
+      <Link to="/4">Link 4</Link>
+    </li>
   </>
 );
 
@@ -36,9 +89,9 @@ export default function NavigationBar() {
       <Navigation.List align="left">
         <Left />
       </Navigation.List>
-      <Navigation.List align="right">
+      {/* <Navigation.List align="right">
         <Right />
-      </Navigation.List>
+      </Navigation.List> */}
     </Navigation.Bar>
   );
 }

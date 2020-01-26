@@ -23,6 +23,7 @@ const App = () => (
       <Route exact path="/examples">
         <PortfolioPage />
       </Route>
+      <Route path="/examples/dashboard"></Route>
       <Route path="/">
         <NavigationBar />
         <Page>
