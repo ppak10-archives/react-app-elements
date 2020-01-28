@@ -49,12 +49,29 @@ export function Sidebar(props) {
   const showBoolean =
     typeof props.setShow === 'function' ? props.show : showSidebarBoolean;
 
+  // JSX
+  const leftToggleButtonJSX = props.side === 'left' || (
+    <button className="toggle-button" onClick={onToggle}>
+      {showBoolean ? `›` : `‹`}
+    </button>
+  );
+
+  const rightToggleButtonJSX = props.side === 'right' || (
+    <button className="toggle-button" onClick={onToggle}>
+      {showBoolean ? `‹` : `›`}
+    </button>
+  );
+
   return (
     <aside className={`${props.className}-${showBoolean ? 'show' : 'hide'}`}>
-      <button className="toggle-button" onClick={onToggle}>
-        Expand Sidebar
-      </button>
-      <div className={`content-${props.side}`}>{props.children}</div>
+      {leftToggleButtonJSX}
+      <div
+        className={`content-${props.side}`}
+        onClick={showBoolean ? undefined : onToggle}
+      >
+        {props.children}
+      </div>
+      {rightToggleButtonJSX}
     </aside>
   );
 }
