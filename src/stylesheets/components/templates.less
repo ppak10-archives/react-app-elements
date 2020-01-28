@@ -3,9 +3,86 @@
  * Styles for template components
  */
 
+// Layout
+
+.layout,
+.layout-row {
+  display: flex;
+  flex: 1;
+}
+
+.layout-column {
+  &:extend(.layout);
+
+  flex-direction: column;
+}
+
+// Page
+
 .page {
   display: flex;
+  flex: 1;
   flex-direction: column;
   height: 100%;
   overflow: auto;
+}
+
+// Sidebar
+.sidebar-template {
+  display: flex;
+}
+
+.sidebar-content {
+  background-color: green;
+  display: flex;
+  width: @sidebar-show-width;
+  transition: 0.25s;
+}
+
+.sidebar-toggle-button {
+  display: flex;
+  flex: 1;
+  width: @sidebar-toggle-button-width;
+}
+
+.sidebar-template-show {
+  &:extend(.sidebar-template);
+
+  .content-left {
+    &:extend(.sidebar-content);
+
+    border-radius: 0 @sidebar-border-radius @sidebar-border-radius 0;
+  }
+
+  .content-right {
+    &:extend(.sidebar-content);
+
+    border-radius: @sidebar-border-radius 0 0 @sidebar-border-radius;
+  }
+
+  // .toggle-button {
+  //   display: none;
+  // }
+}
+
+.sidebar-template-hide {
+  &:extend(.sidebar-template);
+
+  .content-left {
+    &:extend(.sidebar-content);
+
+    border-radius: 0 @sidebar-border-radius @sidebar-border-radius 0;
+    width: @sidebar-hide-width;
+  }
+
+  .content-right {
+    &:extend(.sidebar-content);
+
+    border-radius: @sidebar-border-radius 0 0 @sidebar-border-radius;
+    width: @sidebar-hide-width;
+  }
+
+  // .toggle-button {
+  //   position: absolute;
+  // }
 }

@@ -9,6 +9,13 @@
   padding: 1em;
 }
 
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+}
+
 .navigation-bar {
   a {
     align-items: center;
@@ -16,7 +23,7 @@
     background: blue;
     display: flex;
     font-weight: bold;
-    height: 2em;
+    height: @navigation-bar-height;
     justify-content: center;
     text-decoration: none;
     transition: background 0.25s;
@@ -40,10 +47,7 @@
     top: 0;
 
     .submenu {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      width: 100%;
+      &:extend(.menu-item);
 
       li {
         display: none;
@@ -51,12 +55,10 @@
     }
 
     .nested-submenu {
-      display: flex;
-      flex-direction: column;
+      &:extend(.menu-item);
+
       left: 100%;
-      position: absolute;
       top: 0;
-      width: 100%;
     }
 
     &:hover {

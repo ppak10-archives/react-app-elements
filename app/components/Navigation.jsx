@@ -19,7 +19,7 @@ const Left = () => (
       </Link>
       <ul className="submenu">
         <li>
-          <Link to="/examples">Example 1</Link>
+          <Link to="/examples/dashboard">Dashboard</Link>
         </li>
         <li>
           <Link to="/examples">Example 2</Link>
@@ -65,27 +65,27 @@ const Left = () => (
   </>
 );
 
-const Right = () => (
-  <>
-    <li>
-      <Link to="/buttons">Buttons</Link>
-    </li>
-    <li>
-      <Link to="/fields">Fields</Link>
-    </li>
-    <li>
-      <Link to="/modals">Modals</Link>
-    </li>
-    <li>
-      <Link to="/4">Link 4</Link>
-    </li>
-  </>
-);
+// const Right = () => (
+//   <>
+//     <li>
+//       <Link to="/buttons">Buttons</Link>
+//     </li>
+//     <li>
+//       <Link to="/fields">Fields</Link>
+//     </li>
+//     <li>
+//       <Link to="/modals">Modals</Link>
+//     </li>
+//     <li>
+//       <Link to="/4">Link 4</Link>
+//     </li>
+//   </>
+// );
 
 export default function NavigationBar() {
   return (
     <Navigation.Bar>
-      <Navigation.Logo>react-app-elements</Navigation.Logo>
+      {/* <Navigation.Logo>react-app-elements</Navigation.Logo> */}
       <Navigation.List align="left">
         <Left />
       </Navigation.List>
