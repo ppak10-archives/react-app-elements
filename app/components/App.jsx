@@ -10,7 +10,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // Components
 import NavigationBar from './Navigation';
-import {Layout, Page} from 'react-app-elements/Template';
+import {PageLayout} from 'react-app-elements/Layout';
 import PortfolioPage from './examples/Portfolio';
 
 // Pages
@@ -28,9 +28,9 @@ const App = () => (
         <DashboardExample />
       </Route>
       <Route path="/">
-        <Layout>
+        <div className="layout-column">
           <NavigationBar />
-          <Page>
+          <PageLayout>
             <Route exact path="/">
               <div>Hello World</div>
             </Route>
@@ -40,8 +40,8 @@ const App = () => (
             <Route path="/modals">
               <Modals />
             </Route>
-          </Page>
-        </Layout>
+          </PageLayout>
+        </div>
       </Route>
     </Switch>
   </Router>

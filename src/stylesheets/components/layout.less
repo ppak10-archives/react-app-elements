@@ -1,0 +1,33 @@
+/**
+ * layout.less
+ * Layout component styles
+ */
+
+.layout,
+.layout-row {
+  display: flex;
+  flex: 1;
+  overflow: auto;
+}
+
+.layout-column {
+  &:extend(.layout);
+
+  flex-direction: column;
+}
+
+.grid-layout {
+  &:extend(.layout);
+
+  flex-wrap: wrap;
+  height: 100%;
+  scrollbar-width: none;
+  transition: 0.25s;
+}
+
+.page-layout {
+  &:extend(.layout-column);
+
+  height: 100%;
+  padding: 0 10em;
+}

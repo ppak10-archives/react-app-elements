@@ -1,6 +1,6 @@
 /**
- * Template.jsx
- * Template components
+ * Sidebar.jsx
+ * Sidebar components
  */
 
 // Node Modules
@@ -9,33 +9,7 @@ import React, {useState} from 'react';
 // Constants
 import {BOOLEAN, CHILDREN, FUNCTION, STRING} from './js/proptypes';
 
-export function Layout(props) {
-  return <div className={props.className}>{props.children}</div>;
-}
-
-Layout.defaultProps = {
-  className: 'layout-column',
-};
-
-Layout.propTypes = {
-  children: CHILDREN,
-  className: STRING,
-};
-
-export function Page(props) {
-  return <main className={props.className}>{props.children}</main>;
-}
-
-Page.defaultProps = {
-  className: 'page',
-};
-
-Page.propTypes = {
-  children: CHILDREN,
-  className: STRING,
-};
-
-export function Sidebar(props) {
+export function DrawerSidebar(props) {
   // State
   const [showSidebarBoolean, setShowSidebarBoolean] = useState(props.show);
 
@@ -76,13 +50,13 @@ export function Sidebar(props) {
   );
 }
 
-Sidebar.defaultProps = {
+DrawerSidebar.defaultProps = {
   className: 'sidebar-template',
   show: true,
   side: 'left',
 };
 
-Sidebar.propTypes = {
+DrawerSidebar.propTypes = {
   children: CHILDREN,
   className: STRING,
   setShow: FUNCTION,

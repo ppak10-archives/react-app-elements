@@ -1,36 +1,13 @@
 /**
- * templates.less
- * Styles for template components
+ * sidebar.less
+ * Styles for sidebar components
  */
 
-// Layout
-
-.layout,
-.layout-row {
-  display: flex;
-  flex: 1;
-}
-
-.layout-column {
-  &:extend(.layout);
-
-  flex-direction: column;
-}
-
-// Page
-
-.page {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  height: 100%;
-  overflow: auto;
-}
-
-// Sidebar
 .sidebar-content() {
-  background-color: green;
+  align-items: center;
+  background: @sidebar-content-background;
   display: flex;
+  flex-direction: column;
   width: @sidebar-show-content-width;
   transition: 0.25s;
 }
@@ -68,6 +45,10 @@
   justify-content: center;
   transition: 0.25s;
   width: @sidebar-toggle-button-width;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .sidebar-template-show {
@@ -86,6 +67,10 @@
   .content-left,
   .content-right {
     width: @sidebar-hide-content-width;
+
+    * {
+      display: none;
+    }
   }
 
   &:hover {

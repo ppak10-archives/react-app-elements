@@ -5,7 +5,7 @@
 
 // Node Modules
 import React from 'react';
-import {Page} from 'react-app-elements/Template';
+import {PageLayout} from 'react-app-elements/Layout';
 
 // Constants
 const SKILLS = ['REACT', 'JAVASCRIPT', 'HTML', 'CSS'];
@@ -18,7 +18,7 @@ export default function PortfolioPage() {
     </div>
   ));
   return (
-    <Page className="portfolio-page">
+    <PageLayout className="portfolio-page">
       <div className="parallax">
         <div className="slides">
           <div className="slide">
@@ -29,6 +29,6 @@ export default function PortfolioPage() {
           </div>
         </div>
       </div>
-    </Page>
+    </PageLayout>
   );
 }

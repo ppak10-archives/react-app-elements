@@ -5,24 +5,37 @@
 
 // Node Modules
 import React, {useState} from 'react';
-import {Layout, Page, Sidebar} from 'react-app-elements/Template';
+import {PolaroidCard} from 'react-app-elements/Card';
+import {GridLayout, PageLayout} from 'react-app-elements/Layout';
+import {DrawerSidebar} from 'react-app-elements/Sidebar';
 
 export default function Dashboard() {
   // State
   const [showSidebarBoolean, setShowSidebarBoolean] = useState(true);
 
   return (
-    <Layout className="layout-row">
-      <Page>
+    <div className="layout-row">
+      <PageLayout>
         <div>Hello World</div>
-      </Page>
-      <Sidebar
+        <GridLayout>
+          <PolaroidCard />
+          <PolaroidCard />
+          <PolaroidCard />
+          <PolaroidCard />
+          <PolaroidCard />
+          <PolaroidCard />
+          <PolaroidCard />
+          <PolaroidCard />
+        </GridLayout>
+      </PageLayout>
+      <DrawerSidebar
         setShow={setShowSidebarBoolean}
         show={showSidebarBoolean}
         side="right"
       >
-        {/* Sidebar */}
-      </Sidebar>
-    </Layout>
+        <div>Hello</div>
+        <div>World</div>
+      </DrawerSidebar>
+    </div>
   );
 }

@@ -3,23 +3,19 @@
  * Entry file for less
  */
 
-// Sidebar
-@sidebar-content-border-radius: 20px;
-@sidebar-hide-content-width: 0;
-@sidebar-hover-toggle-button-font-size: 3em;
-@sidebar-hover-content-width: 1em;
-@sidebar-show-content-width: 15em;
-@sidebar-toggle-button-width: 2em;
-@sidebar-toggle-button-font-size: 2em;
-
 @navigation-bar-height: 2em;
+
+// Constants
+@import "constants/sidebar";
 
 // Base
 @import "base";
 
 // Components
 @import "components/button";
+@import "components/card";
 @import "components/fields";
+@import "components/layout";
 @import "components/modal";
 @import "components/navigation";
-@import "components/templates";
+@import "components/sidebar";
