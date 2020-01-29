@@ -1,6 +1,6 @@
 {
   "name": "react-app-elements",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Basic elements to use within React",
   "main": "dist/index.js",
   "scripts": {
