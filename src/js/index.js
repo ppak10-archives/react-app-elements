@@ -7,4 +7,11 @@
 import './main.css';
 
 // Components
-import './components';
+module.exports = {
+  Button: require('../Button'),
+  Card: require('../Card'),
+  Layout: require('../Layout'),
+  Modal: require('../Modal'),
+  Navigation: require('../Navigation'),
+  Sidebar: require('../Sidebar'),
+};
