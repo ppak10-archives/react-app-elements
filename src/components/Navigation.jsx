@@ -7,7 +7,7 @@
 import React from 'react';
 
 // Constants
-import {CHILDREN, STRING} from './js/proptypes';
+import {CHILDREN, STRING} from '../proptypes';
 
 const Bar = ({children, className}) => {
   return <nav className={className}>{children}</nav>;

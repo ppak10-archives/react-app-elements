@@ -5,7 +5,7 @@
 
 // Node Modules
 import React from 'react';
-import {COMPONENT, STRING} from './js/proptypes';
+import {COMPONENT, STRING} from '../proptypes';
 
 export function PolaroidCard(props) {
   return (

@@ -7,10 +7,10 @@
 import React, {useState} from 'react';
 
 // Utils
-import {classnamesLite} from './js/utils';
+import {classnamesLite} from '../utils';
 
 // Constants
-import {CHILDREN, STRING} from './js/proptypes';
+import {CHILDREN, STRING} from '../proptypes';
 
 export default function Modal({children, className}) {
   // State

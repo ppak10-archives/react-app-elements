@@ -1,3 +1,6 @@
+# .npmignore
+# Ignores all folders except for the produced dist folder
+
 .circleci
 app
 public

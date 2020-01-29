@@ -7,7 +7,7 @@
 import React, {useState} from 'react';
 
 // Constants
-import {BOOLEAN, CHILDREN, FUNCTION, STRING} from './js/proptypes';
+import {BOOLEAN, CHILDREN, FUNCTION, STRING} from '../proptypes';
 
 export function DrawerSidebar(props) {
   // State

@@ -7,7 +7,7 @@
 import React from 'react';
 
 // Constants
-import {COMPONENT, STRING} from './js/proptypes';
+import {COMPONENT, STRING} from '../proptypes';
 
 const Button = (props) => {
   return (

@@ -7,7 +7,8 @@
       "alias": {
         "app": "./app",
         "config": "./config.json",
-        "react-app-elements": "./src"
+        "react-app-elements": "./src/components",
+        "react-app-elements-stylesheets": "./src/stylesheets/main.less"
       }
     }]
   ]

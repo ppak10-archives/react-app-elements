@@ -7,7 +7,7 @@
 import React from 'react';
 
 // Constants
-import {CHILDREN, STRING} from './js/proptypes';
+import {CHILDREN, STRING} from '../proptypes';
 
 export function GridLayout(props) {
   return <section className={props.className}>{props.children}</section>;

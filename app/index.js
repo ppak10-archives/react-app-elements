@@ -11,7 +11,7 @@ import {render} from 'react-dom';
 import App from './components/App';
 
 // Styles
-import 'react-app-elements/stylesheets/main.less';
+import 'react-app-elements-stylesheets';
 
 // Custom app stylesheet overrides
 import 'app/stylesheets/main.less';

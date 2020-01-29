@@ -2,7 +2,7 @@
   "name": "react-app-elements",
   "version": "0.0.6",
   "description": "Basic elements to use within React",
-  "main": "dist/js/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "compile-less": "lessc src/stylesheets/main.less dist/main.css",
     "prepublishOnly": "concurrently \"npm run transpile-js\" \"npm run compile-less\"",
