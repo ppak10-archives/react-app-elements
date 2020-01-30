@@ -24,6 +24,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
+              plugins: ['react-hot-loader/babel'],
               sourceMap: true,
             },
           },

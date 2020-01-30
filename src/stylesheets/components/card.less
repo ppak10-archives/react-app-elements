@@ -3,10 +3,30 @@
  * Styles for card components
  */
 
-.polaroid-card {
-  background-color: blue;
-  height: 20em;
-  width: 20em;
-  margin-right: 5em;
-  margin-bottom: 5em;
+.polaroid-frame {
+  background: @polaroid-frame-background;
+  border-radius: @polaroid-frame-border-radius;
+  display: flex;
+  flex-direction: column;
+  height: @polaroid-height;
+  width: @polaroid-width;
+  margin-right: @polaroid-margin;
+  margin-bottom: @polaroid-margin;
+  padding: @polaroid-padding;
+
+  .content {
+    background: @polaroid-content-background;
+    display: flex;
+    height: @polaroid-content-height;
+    justify-content: center;
+
+    img {
+      height: inherit;
+    }
+  }
+
+  .description {
+    flex: 1;
+    margin-top: @polaroid-padding;
+  }
 }
