@@ -16,6 +16,7 @@ import PortfolioPage from './examples/Portfolio';
 // Pages
 import {ButtonsPage} from './pages/Buttons';
 import DashboardExample from './examples/Dashboard';
+import GridExample from './examples/Grid';
 import Modals from './pages/Modals';
 
 const App = () => (
@@ -26,6 +27,9 @@ const App = () => (
       </Route>
       <Route path="/examples/dashboard">
         <DashboardExample />
+      </Route>
+      <Route path="/examples/grid">
+        <GridExample />
       </Route>
       <Route path="/">
         <div className="app">

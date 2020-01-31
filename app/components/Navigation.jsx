@@ -19,6 +19,9 @@ const Left = () => (
       </Link>
       <ul className="submenu">
         <li>
+          <Link to="/examples/grid">Grid</Link>
+        </li>
+        <li>
           <Link to="/examples/dashboard">Dashboard</Link>
         </li>
         <li>

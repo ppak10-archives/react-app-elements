@@ -17,7 +17,7 @@ export default function Dashboard() {
     <div className="layout-row dashboard-page">
       <PageLayout>
         <h1>Example Polaroid Cards</h1>
-        <div className="layout-flex-wrap">
+        <div className="grid-container">
           <Polaroid src="https://www.w3schools.com/tags/smiley.gif">
             Test
           </Polaroid>
