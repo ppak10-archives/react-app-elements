@@ -28,7 +28,7 @@ const App = () => (
         <DashboardExample />
       </Route>
       <Route path="/">
-        <div className="layout-column">
+        <div className="app">
           <NavigationBar />
           <PageLayout>
             <Route exact path="/">

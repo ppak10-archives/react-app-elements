@@ -6,7 +6,7 @@
 // Node Modules
 import React, {useState} from 'react';
 import {Polaroid} from 'react-app-elements/Card';
-import {GridLayout, PageLayout} from 'react-app-elements/Layout';
+import {PageLayout} from 'react-app-elements/Layout';
 import {DrawerSidebar} from 'react-app-elements/Sidebar';
 
 export default function Dashboard() {
@@ -17,7 +17,7 @@ export default function Dashboard() {
     <div className="layout-row dashboard-page">
       <PageLayout>
         <h1>Example Polaroid Cards</h1>
-        <GridLayout>
+        <div className="layout-flex-wrap">
           <Polaroid src="https://www.w3schools.com/tags/smiley.gif">
             Test
           </Polaroid>
@@ -27,7 +27,7 @@ export default function Dashboard() {
           <Polaroid />
           <Polaroid />
           <Polaroid />
-        </GridLayout>
+        </div>
       </PageLayout>
       <DrawerSidebar
         setShow={setShowSidebarBoolean}

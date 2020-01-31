@@ -9,15 +9,15 @@ import React from 'react';
 // Constants
 import {CHILDREN, STRING} from '../proptypes';
 
-export function GridLayout(props) {
+export function Grid(props) {
   return <section className={props.className}>{props.children}</section>;
 }
 
-GridLayout.defaultProps = {
-  className: 'grid-layout',
+Grid.defaultProps = {
+  className: 'grid-container',
 };
 
-GridLayout.propTypes = {
+Grid.propTypes = {
   className: STRING,
   children: CHILDREN,
 };

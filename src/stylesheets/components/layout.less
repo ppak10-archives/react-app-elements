@@ -16,7 +16,7 @@
   flex-direction: column;
 }
 
-.grid-layout {
+.layout-flex-wrap {
   &:extend(.layout);
 
   flex-wrap: wrap;
@@ -24,6 +24,14 @@
   justify-content: center;
   scrollbar-width: none;
   transition: 0.25s;
+}
+
+.grid-container {
+  display: grid;
+  // grid-template-columns: 1fr max-content 1fr;
+  // grid-gap: @grid-container-grid-gap;
+  // grid-template-columns: repeat(auto-fill, max-content);
+  // grid-template-rows: repeat();
 }
 
 .page-layout {
