@@ -20,12 +20,23 @@ export default function Dashboard() {
         <h1>Example Polaroid Cards</h1>
         <PolaroidContainer>
           <Polaroid src="https://www.w3schools.com/tags/smiley.gif" />
+          <Polaroid src="https://www.w3schools.com/tags/smiley.gif" />
+          <Polaroid src="https://www.w3schools.com/tags/smiley.gif" />
+          <Polaroid src="https://www.w3schools.com/tags/smiley.gif" />
+          <Polaroid src="https://www.w3schools.com/tags/smiley.gif" />
+          <Polaroid src="https://www.w3schools.com/tags/smiley.gif" />
+          <Polaroid src="https://www.w3schools.com/tags/smiley.gif" />
           <Polaroid src="https://images.pexels.com/photos/3640993/pexels-photo-3640993.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
           <Polaroid src="https://images.pexels.com/photos/3612312/pexels-photo-3612312.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-          <Polaroid />
-          <Polaroid />
-          <Polaroid />
-          <Polaroid />
+          <Polaroid src="https://www.w3schools.com/css/img_lights.jpg" />
+          <Polaroid src="https://www.w3schools.com/css/img_forest.jpg" />
+          <Polaroid src="http://alliswall.com/file/3241/1920x1200/16:9/small-house.jpg" />
+          <Polaroid src="https://www.w3schools.com/tags/smiley.gif" />
+          <Polaroid src="https://images.pexels.com/photos/3640993/pexels-photo-3640993.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+          <Polaroid src="https://images.pexels.com/photos/3612312/pexels-photo-3612312.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+          <Polaroid src="https://www.w3schools.com/css/img_lights.jpg" />
+          <Polaroid src="https://www.w3schools.com/css/img_forest.jpg" />
+          <Polaroid src="http://alliswall.com/file/3241/1920x1200/16:9/small-house.jpg" />
         </PolaroidContainer>
       </PageLayout>
       <DrawerSidebar

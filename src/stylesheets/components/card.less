@@ -8,9 +8,9 @@
   border-radius: @polaroid-frame-border-radius;
   display: flex;
   flex-direction: column-reverse;
-  // height: @polaroid-height;
-  // grid-column: span 4;
-  // grid-row: span 4;
+  flex: 1;
+  grid-column: span 8;
+  grid-row: span 8;
   padding: @polaroid-padding;
 
   .content {
@@ -18,12 +18,17 @@
     background: @polaroid-content-background;
     display: flex;
     flex: 1;
-    // height: @polaroid-content-height;
     justify-content: center;
+    overflow: hidden;
+    min-width: 100%;
+
+    img {
+      height: 100%;
+      max-width: 100%;
+    }
   }
 
   .description {
-    // flex: 1;
     margin-top: @polaroid-padding;
     height: 1em;
   }
