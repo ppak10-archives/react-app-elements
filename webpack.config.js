@@ -60,7 +60,7 @@ module.exports = {
     ],
   },
   output: {
-    path: path.resolve(__dirname, './public'),
+    path: path.resolve(__dirname, 'server'),
     filename: '[name].bundle.js',
     publicPath: '/',
   },

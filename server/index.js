@@ -18,16 +18,15 @@ const app = express();
 const compiler = webpack(webpackConfig);
 
 app.use(
-    webpackDevMiddleware(compiler, {
-      noInfo: true,
-      publicPath: webpackConfig.output.publicPath,
-    }),
+  webpackDevMiddleware(compiler, {
+    noInfo: true,
+    publicPath: webpackConfig.output.publicPath,
+  }),
 );
+
 app.use(webpackHotMiddleware(compiler));
-app.use(express.static('public'));
-app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, '../public', 'index.html')),
-);
+app.use(express.static(path.resolve(__dirname)));
+app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'index.html')));
 
 // eslint-disable-next-line no-console
 app.listen(PORT, () => console.info('Development app running on port 3000'));

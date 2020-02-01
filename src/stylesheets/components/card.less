@@ -7,26 +7,24 @@
   background: @polaroid-frame-background;
   border-radius: @polaroid-frame-border-radius;
   display: flex;
-  flex-direction: column;
-  height: @polaroid-height;
-  width: @polaroid-width;
-  margin-right: @polaroid-margin;
-  margin-bottom: @polaroid-margin;
+  flex-direction: column-reverse;
+  // height: @polaroid-height;
+  // grid-column: span 4;
+  // grid-row: span 4;
   padding: @polaroid-padding;
 
   .content {
+    align-items: center;
     background: @polaroid-content-background;
     display: flex;
-    height: @polaroid-content-height;
+    flex: 1;
+    // height: @polaroid-content-height;
     justify-content: center;
-
-    img {
-      height: inherit;
-    }
   }
 
   .description {
-    flex: 1;
+    // flex: 1;
     margin-top: @polaroid-padding;
+    height: 1em;
   }
 }
