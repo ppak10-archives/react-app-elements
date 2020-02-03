@@ -10,6 +10,12 @@ import {PolaroidContainer} from 'react-app-elements/Grid';
 import {PageLayout} from 'react-app-elements/Layout';
 import {DrawerSidebar} from 'react-app-elements/Sidebar';
 
+// Constants
+const IMAGES = 10;
+const MAX_SIZE = 1000;
+
+const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
+
 export default function Dashboard() {
   // State
   const [showSidebarBoolean, setShowSidebarBoolean] = useState(true);
@@ -18,6 +24,18 @@ export default function Dashboard() {
   const onChange = (e) => {
     setSliderValueNumber(parseFloat(e.target.value));
   };
+
+  // JSX
+  const polaroidJSX = [...Array(IMAGES)].map((e, index) => (
+    <Polaroid
+      key={index}
+      scale={sliderValueNumber}
+      src={`https://picsum.photos/${getRandomInt(MAX_SIZE)}/${getRandomInt(
+        MAX_SIZE,
+      )}`}
+    />
+  ));
+
   return (
     <div className="layout-row dashboard-page">
       <PageLayout>
@@ -32,80 +50,7 @@ export default function Dashboard() {
             onChange={onChange}
           />
         </div>
-        <PolaroidContainer>
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://www.w3schools.com/tags/smiley.gif"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://www.w3schools.com/tags/smiley.gif"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://www.w3schools.com/tags/smiley.gif"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://www.w3schools.com/tags/smiley.gif"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://www.w3schools.com/tags/smiley.gif"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://www.w3schools.com/tags/smiley.gif"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://www.w3schools.com/tags/smiley.gif"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://images.pexels.com/photos/3640993/pexels-photo-3640993.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://images.pexels.com/photos/3612312/pexels-photo-3612312.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://www.w3schools.com/css/img_lights.jpg"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://www.w3schools.com/css/img_forest.jpg"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="http://alliswall.com/file/3241/1920x1200/16:9/small-house.jpg"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://www.w3schools.com/tags/smiley.gif"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://images.pexels.com/photos/3640993/pexels-photo-3640993.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://images.pexels.com/photos/3612312/pexels-photo-3612312.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://www.w3schools.com/css/img_lights.jpg"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="https://www.w3schools.com/css/img_forest.jpg"
-          />
-          <Polaroid
-            scale={sliderValueNumber}
-            src="http://alliswall.com/file/3241/1920x1200/16:9/small-house.jpg"
-          />
-        </PolaroidContainer>
+        <PolaroidContainer>{polaroidJSX}</PolaroidContainer>
       </PageLayout>
       <DrawerSidebar
         setShow={setShowSidebarBoolean}
