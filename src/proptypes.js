@@ -7,11 +7,13 @@
 import PropTypes from 'prop-types';
 
 // Base
-export const BOOLEAN = PropTypes.bool;
+export const BOOL = PropTypes.bool;
 export const COMPONENT = PropTypes.node;
-export const FUNCTION = PropTypes.func;
+export const FUNC = PropTypes.func;
 export const NUMBER = PropTypes.number;
 export const STRING = PropTypes.string;
+
+export const oneOfType = (...proptypes) => PropTypes.oneOfType(proptypes);
 
 // React
 export const CHILDREN = PropTypes.oneOfType([

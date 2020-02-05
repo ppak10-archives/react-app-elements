@@ -16,6 +16,10 @@ const MAX_SIZE = 1000;
 
 const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
+const sizeList = [...Array(IMAGES)].map(
+  () => `${getRandomInt(MAX_SIZE)}/${getRandomInt(MAX_SIZE)}`,
+);
+
 export default function Dashboard() {
   // State
   const [showSidebarBoolean, setShowSidebarBoolean] = useState(true);
@@ -26,13 +30,12 @@ export default function Dashboard() {
   };
 
   // JSX
-  const polaroidJSX = [...Array(IMAGES)].map((e, index) => (
+  const polaroidJSX = sizeList.map((e, index) => (
     <Polaroid
       key={index}
       scale={sliderValueNumber}
-      src={`https://picsum.photos/${getRandomInt(MAX_SIZE)}/${getRandomInt(
-        MAX_SIZE,
-      )}`}
+      showScaleButton={true}
+      src={`https://picsum.photos/id/${index + 1}/${e}`}
     />
   ));
 

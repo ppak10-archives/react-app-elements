@@ -4,15 +4,26 @@
  */
 
 // Polaroid
-@polaroid-padding: 1em;
+@polaroid-padding: 1em; // Padding value for the individual polaroid item
 
-@polaroid-frame-background: linear-gradient(to bottom right, #fff3ec, #fff000);
-// @polaroid-frame-background: linear-gradient(to bottom right, #fff3ec, #ffffff);
+@polaroid-container-grid-cell: 2em; // Grid cell size for columns and rows
+@polaroid-container-grid-gap: 2em; // Grid gap size between polaroid items
+@polaroid-container-padding-right: 2em; // Padding to account for notification
+@polaroid-container-padding-top: 2em; // Padding to account for notification
+
+@polaroid-frame-background: white;
 @polaroid-frame-border-radius: 2.5px;
+
+@polaroid-description-height: 2em;
 
 @polaroid-content-background: linear-gradient(
   to bottom right,
-  #e9e9e9,
+  #f7f7f7,
   #dddddd
 );
-// @polaroid-content-height: @polaroid-height * 4 / 5;
+
+@polaroid-notification-right: -20;
+@polaroid-notification-top: -20;
+@polaroid-notification-border-radius: 0.25em;
+@polaroid-notification-min-width: 1em;
+@polaroid-notification-padding: 0.5em;

@@ -10,6 +10,7 @@
   flex-direction: column-reverse;
   flex: 1;
   padding: @polaroid-padding;
+  position: relative;
 
   .content {
     align-items: center;
@@ -18,17 +19,40 @@
     flex: 1;
     justify-content: center;
     overflow: hidden;
-    min-width: 100%;
+    position: relative;
 
     img {
       flex-shrink: 0;
-      min-width: 100%;
-      min-height: 100%;
+    }
+
+    .scale-button {
+      border: none;
+      background: none;
+      outline: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
   .description {
+    margin-bottom: @polaroid-padding;
     margin-top: @polaroid-padding;
-    height: 1em;
+    height: @polaroid-description-height;
+  }
+
+  .notification {
+    background: red;
+    border-radius: @polaroid-notification-border-radius;
+    min-width: @polaroid-notification-min-width;
+    padding: @polaroid-notification-padding;
+    position: absolute;
+    right: @polaroid-notification-right;
+    text-align: center;
+    top: @polaroid-notification-top;
   }
 }

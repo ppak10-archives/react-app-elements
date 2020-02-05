@@ -7,7 +7,7 @@
 import React, {useState} from 'react';
 
 // Constants
-import {BOOLEAN, CHILDREN, FUNCTION, STRING} from '../proptypes';
+import {BOOL, CHILDREN, FUNC, STRING} from '../proptypes';
 
 export function DrawerSidebar(props) {
   // State
@@ -59,7 +59,7 @@ DrawerSidebar.defaultProps = {
 DrawerSidebar.propTypes = {
   children: CHILDREN,
   className: STRING,
-  setShow: FUNCTION,
-  show: BOOLEAN,
+  setShow: FUNC,
+  show: BOOL,
   side: STRING,
 };
