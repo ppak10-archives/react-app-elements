@@ -4,52 +4,61 @@
  */
 
 // Node Modules
-import React, {useState} from 'react';
-
-// Utils
-import {classnamesLite} from '../utils';
+import {useEffect, useRef} from 'react';
+import {createPortal} from 'react-dom';
 
 // Constants
 import {CHILDREN, STRING} from '../proptypes';
 
-export default function Modal({children, className}) {
-  // State
-  const [show, setShow] = useState(false);
+export function Base(props) {
+  // Hooks
+  const modalRef = useRef(null);
 
-  // Callbacks
-  const onHide = () => {
-    setShow(false);
+  // Effects
+  useEffect(() => {
+    const root = document.getElementById('modal');
+    let modalParent = null;
+
+    // Creates root element as `modalParent` if not already created, sets `root`
+    // to `modalParent` if root element already exists
+    if (root === null) {
+      modalParent = document.createElement('div');
+      modalParent.setAttribute('id', 'modal');
+      document.body.insertBefore(
+        modalParent,
+        document.body.lastElementChild.nextElementSibling,
+      );
+    } else {
+      modalParent = root;
+    }
+
+    modalParent.appendChild(modalRef.current);
+    return () => {
+      modalRef.current.remove();
+      if (!modalParent.childNodes.length) {
+        modalParent.remove();
+      }
+    };
+  }, []);
+
+  // Function to lazy load element for `modalRef` to prevent re-creating element
+  // when re-rendering component
+  const getModal = () => {
+    if (!modalRef.current) {
+      modalRef.current = document.createElement('div');
+    }
+    modalRef.current.classList.add(props.className);
+    return modalRef.current;
   };
 
-  const onShow = () => {
-    setShow(true);
-  };
-
-  // Classnames
-  const defaultClassName = `modal-background ${className || ''}`;
-  const modalClassName = classnamesLite(defaultClassName, {
-    hide: !show,
-  });
-
-  return (
-    <>
-      <button onClick={onShow}>Open</button>
-      <div className={modalClassName} onClick={onHide}>
-        <div className="modal" onClick={(e) => e.stopPropagation()}>
-          {children}
-        </div>
-      </div>
-    </>
-  );
+  return createPortal(props.children, getModal());
 }
 
-Modal.defaultProps = {
-  children: <div>Render Modal Children Here</div>,
+Base.defaultProps = {
+  className: 'modal-base',
 };
 
-Modal.propTypes = {
+Base.propTypes = {
   children: CHILDREN,
   className: STRING,
 };
-
-// export const Header = ({children, className}) => <div></div>;

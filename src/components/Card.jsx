@@ -9,10 +9,10 @@ import {oneOfType, BOOL, CHILDREN, FUNC, NUMBER, STRING} from '../proptypes';
 
 // Constants
 const PX_EM = 16;
-const GRID_CELL_SIZE = 2;
-const GRID_GAP_SIZE = 2;
+const GRID_CELL_SIZE = 2; // Matches that of stylesheet to display properly
+const GRID_GAP_SIZE = 2; // Matches that of stylesheet to display properly
 const GRID_CELL_GAP_SIZE = PX_EM * (GRID_CELL_SIZE + GRID_GAP_SIZE);
-const MAX_SCALE = 1; // Typical range of 0.0 to 1.0
+const MAX_SCALE = 1; // Typical range of scale 0.0 to 1.0
 
 // Utils
 import {clamp} from '../utils';
@@ -83,10 +83,10 @@ export function Polaroid(props) {
 
 Polaroid.defaultProps = {
   className: 'polaroid-frame',
-  scale: 0,
+  scale: 0, // Sets polaroid size to `spanMin` value
   showScaleButton: false,
   spanMin: 5, // Minimum span size of polaroid cards when scale is 0
-  spanMax: 30, // Maximum possible span size of polaroid cards at MAX_SCALE
+  spanMax: 30, // Maximum possible span size of polaroid cards at `MAX_SCALE`
   src: `https://www.w3schools.com/tags/smiley.gif`,
 };
 

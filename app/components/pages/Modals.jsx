@@ -7,8 +7,14 @@
 import React from 'react';
 
 // Components
-import Modal from 'react-app-elements/Modal';
+import {Base} from 'react-app-elements/Modal';
 
 export default function Modals() {
-  return <Modal></Modal>;
+  return (
+    <Base>
+      <div className="modal" onClick={(e) => e.stopPropagation()}>
+        hello world
+      </div>
+    </Base>
+  );
 }

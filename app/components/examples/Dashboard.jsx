@@ -34,7 +34,6 @@ export default function Dashboard() {
     <Polaroid
       key={index}
       scale={sliderValueNumber}
-      showScaleButton={true}
       src={`https://picsum.photos/id/${index + 1}/${e}`}
     />
   ));
