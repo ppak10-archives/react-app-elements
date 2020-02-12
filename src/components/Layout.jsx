@@ -22,15 +22,15 @@ Grid.propTypes = {
   children: CHILDREN,
 };
 
-export function PageLayout(props) {
+export function Page(props) {
   return <main className={props.className}>{props.children}</main>;
 }
 
-PageLayout.defaultProps = {
+Page.defaultProps = {
   className: 'page-layout',
 };
 
-PageLayout.propTypes = {
+Page.propTypes = {
   children: CHILDREN,
   className: STRING,
 };

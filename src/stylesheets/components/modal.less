@@ -3,7 +3,7 @@
  * Styles for modal components
  */
 
-.modal-background {
+.modal-base() {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
@@ -17,7 +17,19 @@
   transition: 0.25s;
   width: 100%;
   z-index: 1;
+}
 
+.modal-base-show {
+  .modal-base();
+}
+
+.modal-base-hide {
+  .modal-base();
+
+  display: none;
+}
+
+.modal-background {
   .modal {
     background-color: white;
     border-radius: 1em;

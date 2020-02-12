@@ -10,7 +10,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 // Components
 import NavigationBar from './Navigation';
-import {PageLayout} from 'react-app-elements/Layout';
+import {Page} from 'react-app-elements/Layout';
 import PortfolioPage from './examples/Portfolio';
 
 // Pages
@@ -34,7 +34,7 @@ const App = () => (
       <Route path="/">
         <div className="app">
           <NavigationBar />
-          <PageLayout>
+          <Page>
             <Route exact path="/">
               <div>Hello World</div>
             </Route>
@@ -44,7 +44,7 @@ const App = () => (
             <Route path="/modals">
               <Modals />
             </Route>
-          </PageLayout>
+          </Page>
         </div>
       </Route>
     </Switch>

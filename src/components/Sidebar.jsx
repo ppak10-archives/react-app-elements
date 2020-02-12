@@ -51,9 +51,9 @@ export function DrawerSidebar(props) {
 }
 
 DrawerSidebar.defaultProps = {
-  className: 'sidebar-template',
-  show: true,
-  side: 'left',
+  className: 'sidebar-template', // CSS class with suffix '-show' or '-hide'
+  show: true, // Determines '-show' or '-hide' suffix for classname
+  side: 'left', // Must be either 'left' or 'right'
 };
 
 DrawerSidebar.propTypes = {

@@ -7,7 +7,7 @@
 import React, {useState} from 'react';
 import {Polaroid} from 'react-app-elements/Card';
 import {PolaroidContainer} from 'react-app-elements/Grid';
-import {PageLayout} from 'react-app-elements/Layout';
+import {Page} from 'react-app-elements/Layout';
 import {DrawerSidebar} from 'react-app-elements/Sidebar';
 
 // Constants
@@ -40,7 +40,7 @@ export default function Dashboard() {
 
   return (
     <div className="layout-row dashboard-page">
-      <PageLayout>
+      <Page>
         <h1>Example Polaroid Cards</h1>
         <div className="slider">
           <input
@@ -53,7 +53,7 @@ export default function Dashboard() {
           />
         </div>
         <PolaroidContainer>{polaroidJSX}</PolaroidContainer>
-      </PageLayout>
+      </Page>
       <DrawerSidebar
         setShow={setShowSidebarBoolean}
         show={showSidebarBoolean}
