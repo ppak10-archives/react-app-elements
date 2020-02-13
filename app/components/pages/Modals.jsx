@@ -7,8 +7,8 @@
 import React from 'react';
 
 // Components
-import {Toggle} from 'react-app-elements/Modal';
+import {Example} from 'react-app-elements/Modal';
 
 export default function Modals() {
-  return <Toggle />;
+  return <Example />;
 }

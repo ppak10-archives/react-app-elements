@@ -8,7 +8,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import {createPortal} from 'react-dom';
 
 // Constants
-import {BOOL, CHILDREN, STRING} from '../proptypes';
+import {CHILDREN, FUNC, STRING} from '../proptypes';
 
 /**
  * Base component to `createPortal` and display modal children
@@ -17,27 +17,9 @@ import {BOOL, CHILDREN, STRING} from '../proptypes';
  */
 export function Base(props) {
   // Hooks
-  const modalRef = useRef(null);
+  const contentRef = useRef(null);
 
   // Effects
-  useEffect(() => {
-    if (modalRef.current !== null) {
-      if (
-        modalRef.current.classList.contains(`${props.className}-show`) &&
-        !props.show
-      ) {
-        modalRef.current.classList.remove(`${props.className}-show`);
-        modalRef.current.classList.add(`${props.className}-hide`);
-      } else if (
-        modalRef.current.classList.contains(`${props.className}-hide`) &&
-        props.show
-      ) {
-        modalRef.current.classList.remove(`${props.className}-hide`);
-        modalRef.current.classList.add(`${props.className}-show`);
-      }
-    }
-  }, [props.className, props.show]);
-
   useEffect(() => {
     const root = document.getElementById('modal');
     let modalParent = null;
@@ -55,51 +37,59 @@ export function Base(props) {
       modalParent = root;
     }
 
-    modalParent.appendChild(modalRef.current);
+    modalParent.appendChild(contentRef.current);
+    modalParent.onclick = props.onClick;
     return () => {
-      modalRef.current.remove();
+      contentRef.current.remove();
       if (!modalParent.childNodes.length) {
         modalParent.remove();
       }
     };
-  }, []);
+  }, [props.onClick]);
 
-  // Function to lazy load element for `modalRef` to prevent re-creating element
-  // when re-rendering component
+  // Function to lazy load element for `contentRef` to prevent re-creating
+  // element when re-rendering component
   const getModal = () => {
-    if (!modalRef.current) {
-      modalRef.current = document.createElement('div');
+    if (!contentRef.current) {
+      contentRef.current = document.createElement('div');
     }
-    modalRef.current.classList.add(
-      `${props.className}-${props.show ? 'show' : 'hide'}`,
-    );
-    return modalRef.current;
+    contentRef.current.onclick = (e) => e.stopPropagation();
+    contentRef.current.classList.add(props.className);
+    // contentRef.current.onClick = props.onClick;
+    return contentRef.current;
   };
 
   return createPortal(props.children, getModal());
 }
 
 Base.defaultProps = {
-  className: 'modal-base',
-  show: false,
+  className: 'content',
 };
 
 Base.propTypes = {
   children: CHILDREN,
   className: STRING,
-  show: BOOL,
+  onClick: FUNC,
 };
 
-export function Toggle(props) {
+export function Example(props) {
   const [show, setShow] = useState(false);
+
+  // JSX
+  const modalJSX = show && (
+    <Base onClick={() => setShow(false)}>
+      <h1>{props.text}</h1>
+    </Base>
+  );
+
   return (
     <>
       <button onClick={() => setShow(!show)}>show</button>
-      <Base show={show}>
-        <div className="modal" onClick={(e) => e.stopPropagation()}>
-          hello world
-        </div>
-      </Base>
+      {modalJSX}
     </>
   );
 }
+
+Example.propTypes = {
+  text: STRING,
+};

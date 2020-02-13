@@ -59,9 +59,11 @@ export function Polaroid(props) {
 
   const notificationJSX =
     typeof props.notification === 'function' ? (
-      <props.notification />
+      <div className="notification-button">
+        <props.notification />
+      </div>
     ) : (
-      <div className="notification">
+      <div className="notification-text">
         {['string', 'number'].includes(typeof props.notification) &&
           props.notification}
       </div>

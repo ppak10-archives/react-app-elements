@@ -8,6 +8,7 @@ import React, {useState} from 'react';
 import {Polaroid} from 'react-app-elements/Card';
 import {PolaroidContainer} from 'react-app-elements/Grid';
 import {Page} from 'react-app-elements/Layout';
+import {Example} from 'react-app-elements/Modal';
 import {DrawerSidebar} from 'react-app-elements/Sidebar';
 
 // Constants
@@ -35,6 +36,7 @@ export default function Dashboard() {
       key={index}
       scale={sliderValueNumber}
       src={`https://picsum.photos/id/${index + 1}/${e}`}
+      notification={() => <Example text={index} />}
     />
   ));
 

@@ -3,7 +3,7 @@
  * Styles for modal components
  */
 
-.modal-base() {
+#modal {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
@@ -17,28 +17,16 @@
   transition: 0.25s;
   width: 100%;
   z-index: 1;
-}
 
-.modal-base-show {
-  .modal-base();
-}
+  .content {
+    .hide-scrollbar();
 
-.modal-base-hide {
-  .modal-base();
-
-  display: none;
-}
-
-.modal-background {
-  .modal {
     background-color: white;
     border-radius: 1em;
     display: flex;
+    flex-direction: column;
+    max-height: @modal-content-max-height;
+    max-width: @modal-content-max-width;
     padding: 1em;
   }
-}
-
-.hide:extend(.modal-background) {
-  opacity: 0;
-  z-index: -1;
 }

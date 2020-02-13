@@ -4,6 +4,8 @@
  */
 
 .polaroid-container {
+  .hide-scrollbar();
+
   display: grid;
   grid-gap: @polaroid-container-grid-gap;
   grid-template-columns:
@@ -18,13 +20,6 @@
     );
   grid-auto-flow: dense;
   grid-auto-rows: minmax(@polaroid-container-grid-cell, 1fr);
-  overflow: auto;
   padding-right: @polaroid-container-padding-right;
   padding-top: @polaroid-container-padding-top;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
