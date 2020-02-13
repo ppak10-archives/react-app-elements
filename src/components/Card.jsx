@@ -84,7 +84,7 @@ export function Polaroid(props) {
 }
 
 Polaroid.defaultProps = {
-  className: 'polaroid-frame',
+  className: 'card-polaroid',
   scale: 0, // Sets polaroid size to `spanMin` value
   showScaleButton: false,
   spanMin: 5, // Minimum span size of polaroid cards when scale is 0

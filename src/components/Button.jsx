@@ -7,17 +7,22 @@
 import React from 'react';
 
 // Constants
-import {COMPONENT, STRING} from '../proptypes';
+import {CHILDREN, FUNC, STRING} from '../proptypes';
 
-const Button = (props) => {
+export function Notification(props) {
   return (
-    <button className={`button ${props.className}`}>{props.children}</button>
+    <button className={props.className} onClick={props.onClick}>
+      {props.children}
+    </button>
   );
+}
+
+Notification.defaultProps = {
+  className: 'button-notification',
 };
 
-Button.propTypes = {
-  children: COMPONENT,
+Notification.propTypes = {
+  children: CHILDREN,
   className: STRING,
+  onClick: FUNC,
 };
-
-export default Button;

@@ -6,6 +6,7 @@
 // Node Modules
 import React, {useEffect, useRef, useState} from 'react';
 import {createPortal} from 'react-dom';
+import {Notification} from 'react-app-elements/Button';
 
 // Constants
 import {CHILDREN, FUNC, STRING} from '../proptypes';
@@ -84,7 +85,7 @@ export function Example(props) {
 
   return (
     <>
-      <button onClick={() => setShow(!show)}>show</button>
+      <Notification onClick={() => setShow(!show)}>show</Notification>
       {modalJSX}
     </>
   );

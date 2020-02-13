@@ -37,6 +37,7 @@ export default function Dashboard() {
       scale={sliderValueNumber}
       src={`https://picsum.photos/id/${index + 1}/${e}`}
       notification={() => <Example text={index} />}
+      // notification="test notification"
     />
   ));
 

@@ -3,15 +3,15 @@
  * Styles for card components
  */
 
-.notification() {
-  min-width: @polaroid-notification-min-width;
+// Mixins
+.polaroid-notification() {
   position: absolute;
   right: @polaroid-notification-right;
-  text-align: center;
   top: @polaroid-notification-top;
 }
 
-.polaroid-frame {
+// Components
+.card-polaroid {
   background: @polaroid-frame-background;
   border-radius: @polaroid-frame-border-radius;
   display: flex;
@@ -54,14 +54,11 @@
   }
 
   .notification-button {
-    .notification();
+    .polaroid-notification();
   }
 
   .notification-text {
     .notification();
-
-    background: red;
-    border-radius: @polaroid-notification-border-radius;
-    padding: @polaroid-notification-padding;
+    .polaroid-notification();
   }
 }

@@ -3,16 +3,21 @@
  * Styles for button component
  */
 
-.button {
-  background-color: green;
-  border: 1px solid black;
-  border-radius: 1em;
-  font-size: 1em;
-  padding: 0.25em;
+.button() {
+  border-style: none;
+  outline: none;
   text-decoration: none;
 
   &:hover {
-    box-shadow: 0.01em 0.01em 0.1em black;
     cursor: pointer;
+  }
+}
+
+.button-notification {
+  .button();
+  .notification();
+
+  &:hover {
+    transform: scale(1.25);
   }
 }

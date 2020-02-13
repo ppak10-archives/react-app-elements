@@ -7,10 +7,10 @@
 import React from 'react';
 
 // Components
-import Button from 'react-app-elements/Button';
+import {Notification} from 'react-app-elements/Button';
 
 export const ButtonsPage = () => (
   <div className="page">
-    <Button className="">Button Text</Button>
+    <Notification>Button Text</Notification>
   </div>
 );
